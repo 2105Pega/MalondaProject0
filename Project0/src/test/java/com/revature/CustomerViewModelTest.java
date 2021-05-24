@@ -41,11 +41,15 @@ public class CustomerViewModelTest {
 		Customer cust = new Customer(0002, "Mr.", "Ronsard", "Malonda", "121-11-1111","12/01/1999", 
 				"20 Maple Ave", "19440", "Albert@yabiso.com", "424-858-9874", "bbbbb","123456", (new Date()));
 		
-		succeed = customers.Add(cust);		
+		succeed = customers.Add(cust);	
+		
+		//printCustomers(customers);
 		
 		Customer oldCust = new Customer(0002, "Mr.", "Ronsard", "Malonda", "121-11-1111","12/01/1999", 
 				"20 Maple Ave", "19440", "Albert@yabiso.com", "424-858-9874","bbbbb","123456",  (new Date()));
 		
+		
+		succeed = customers.Add(oldCust);	
 		Customer newCust = customers.CopyCustomer(oldCust);
 				
 		newCust.setLastName("Tsiku");
@@ -54,12 +58,12 @@ public class CustomerViewModelTest {
 		
 		succeed = customers.Edit(oldCust, newCust);
 		
-		//System.out.println(" result : " + succeed );
-		
-		printCustomers(customers);
 		
 		Boolean passed = true;
 		assertEquals(passed, succeed);
+		
+		System.out.println("\n\n\t\t Editing ended---------------- -------------------------------\n\n");
+
 	}
 	
 
@@ -74,11 +78,11 @@ public class CustomerViewModelTest {
 		Customer cust = new Customer(0001, "Mr.", "Ronsard", "Malonda", "111-11-1111","12/01/1999", 
 				"20 Maple Ave", "19440", "Albert@yabiso.com", "424-858-9874","aaaaa","123456",  (new Date()));
 					
+		cust.setCustomerNo(1);
+		
 		int index = customers.SearchCustomer(cust);
 		
-		//System.out.println("index search " + index );
-		
-		//printCustomers(customers);
+
 		
 		if( index > -1 ) {
 			

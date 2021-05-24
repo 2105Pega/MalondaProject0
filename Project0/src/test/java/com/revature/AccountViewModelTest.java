@@ -117,12 +117,15 @@ public class AccountViewModelTest {
 		
 		Account acc = new Account(	0001, (customers.getCustomers()), 20.4);
 
-
+		acc.setAccountNo(1);
+		
 		int index = accounts.SearchAccount(acc);
+		
+
 
 	    System.out.println("			index search    " + index );
 
-		// printaccounts(accounts);
+
 
 		if (index > -1) {
 

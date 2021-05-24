@@ -28,7 +28,7 @@ public class AccountViewModel {
 
 	}
 
-	// Save the new or updated account back to the WCF Data Service
+	// Save the new or updated account back to the collection
 	// and return the form to Browsing mode
 	public Boolean Add(Account cust) {
 
@@ -37,13 +37,10 @@ public class AccountViewModel {
 
 		// Validate the details of the account
 		if (this.ValidateAccount(cust)) {
-			// Only continue if the account details are valid
-			// this.IsBusy = true;
+
 
 			// If the user is creating a new account,
-			// add it to the collection for the WCF Data Service
-			
-			//System.out.println("Account validation succeed");
+			// add it to the collection 
 
 			try {
 
